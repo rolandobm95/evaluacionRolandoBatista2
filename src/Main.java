@@ -1,3 +1,8 @@
+/*
+Esta clase determina si un movimiento de alfil en un tablero de ajedrez es valido
+cuando se ingresa como datos la posición de partida y posición final de dicha pieza.
+Suponiendo que el tablero de ajedrez es una matriz de 8x8
+ */
 import java.util.Scanner;
 import java.util.Set;
 import java.util.HashSet;
