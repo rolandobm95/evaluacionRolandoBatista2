@@ -14,13 +14,37 @@ public class Main {
 
         System.out.println("Ingrese las posiciones en formato (letra numero)");
         System.out.println("Ejemplo: a2, d7, h3");
-
+        //Validacion y entrada de datos
+        do{
             System.out.print("Por favor, ingrese la posicion inicial: ");
             pos_inicial = scanner.next();
-
+            if(pos_inicial.length() == 2){
+                if(conjunto_columna.contains(pos_inicial.charAt(0)) && conjunto_fila.contains(pos_inicial.charAt(1))){
+                    break;
+                }else{
+                    System.out.println("La posicion no es valida");
+                }
+            }else{
+                System.out.println("La posición debe tener dos caracteres.");
+            }
+        }while(true);
+        do{
             System.out.print("Por favor, ingrese la posicion final: ");
             pos_final = scanner.next();
-
+            if(pos_final.length() == 2){
+                if(conjunto_columna.contains(pos_final.charAt(0)) && conjunto_fila.contains(pos_final.charAt(1))){
+                    if (!pos_inicial.equals(pos_final)){
+                        break;
+                    }else{
+                        System.out.println("Las posiciones inicial y final no pueden ser iguales");
+                    }
+                }else{
+                    System.out.println("La posicion no es valida");
+                }
+            }else{
+                System.out.println("La posición debe tener dos caracteres.");
+            }
+        }while(true);
 
 
         if(ajedrez.MovimientoValido(pos_inicial,pos_final)){
